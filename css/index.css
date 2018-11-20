@@ -1,3 +1,111 @@
-h1{
-    color: blue;
+html,
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#welcome-section{
+  min-height: 55vh;
+  padding-top: 45vh;
+  background-color: hsl(170, 100%, 90%);
+}
+
+#welcome-section p{
+  font-family: monospace;
+  font-weight: 100;
+  transform: translateY(-20px);
+}
+
+#navbar{
+  position: fixed;
+  width: 100%;
+  text-align: right;
+  background-color: hsl(170, 50%, 60%);
+  top: 0;
+  left: 0;
+  padding: 15px;
+}
+
+#navbar a{
+  text-decoration: none;
+  color: hsl(250, 50%, 50%);
+  padding-right: 40px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.project{
+  display: inline-block;
+  overflow: hidden;
+  color: hsl(250, 50%, 50%);
+  text-decoration: none;
+  height: 220px;
+  width: 280px;
+  margin: 40px;
+  border: 2px solid hsl(250, 50%, 80%);
+}
+
+#projects p{
+  margin-top: 40px;
+}
+
+.project-pic{
+  width: 100%;
+  height: 180px;
+  border-bottom: 2px solid hsl(250, 50%, 80%);
+}
+
+.project-title{
+  font-weight: bold; 
+  padding-top: 5px;
+}
+
+#contact{
+  background-color: hsl(10, 50%, 90%);
+  padding: 30px 10px;
+}
+
+#contact p{
+  font-family: monospace;
+  transform: translateY(-20px);
+}
+
+.contact-details{
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 2em;
+  border: 2px solid black;
+  margin: 0 35px 45px 35px;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  background-color: white;
+  color: black;
+}
+
+.contact-details:hover{
+  animation-name: fade-color;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-color{
+  100%{
+    background-color: purple;
+    color: white;
+  }
+}
+
+@media (max-width:500px){
+  #navbar a{
+    padding-right: 20px;
+    font-weight: 500;
+  }
+  .project{
+    margin: 0;
+  }
 }
