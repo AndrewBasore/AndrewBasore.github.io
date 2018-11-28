@@ -21,7 +21,7 @@ body {
 #navbar{
   position: fixed;
   width: 100%;
-  text-align: right;
+  text-align: left;
   background-color: hsl(170, 50%, 60%);
   top: 0;
   left: 0;
@@ -31,9 +31,10 @@ body {
 #navbar a{
   text-decoration: none;
   color: hsl(250, 50%, 50%);
-  padding-right: 40px;
+  padding:  10px 40px;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
+  border-radius: 3px;
 }
 
 .project{
@@ -45,21 +46,30 @@ body {
   width: 280px;
   margin: 40px;
   border: 2px solid hsl(250, 50%, 80%);
+  border-radius: 4px;
 }
 
 #projects p{
   margin-top: 40px;
 }
 
-.project-pic{
+.content{
   width: 100%;
   height: 180px;
+  position: relative;
+}
+.project-pic{
+  
+  height: 180px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   border-bottom: 2px solid hsl(250, 50%, 80%);
 }
 
 .project-title{
   font-weight: bold; 
-  padding-top: 5px;
+  padding-top: 12px;
 }
 
 #contact{
@@ -70,6 +80,41 @@ body {
 #contact p{
   font-family: monospace;
   transform: translateY(-20px);
+}
+
+.hover-panel{
+  position: absolute;
+  height: 180px;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: hsl(10, 50%, 90%);
+  opacity: 0;
+  font-size: 15px;
+}
+
+.hover-panel:hover{
+  animation-name: show-project-details;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+}
+
+.hover-panel:hover form{
+  animation-name: movein;
+  animation-duration: 750ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show-project-details{
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes movein{
+  100%{
+    left: 0;
+  }
 }
 
 .contact-details{
@@ -93,10 +138,25 @@ body {
   animation-fill-mode: forwards;
 }
 
+
+
 @keyframes fade-color{
   100%{
     background-color: purple;
     color: white;
+  }
+}
+
+nav a:hover{
+  animation-name: focus-hover;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes focus-hover{
+  100%{
+    background-color: hsl(250, 50%, 50%);
+    color:  hsl(10, 50%, 90%);
   }
 }
 
@@ -108,4 +168,24 @@ body {
   .project{
     margin: 0;
   }
+}
+
+.hover-panel form{
+  display: inline;
+}
+
+.button-left{
+  position: relative;
+  left: -150px;
+}
+
+.button-right{
+  position: relative;
+  left: 150px;
+}
+
+button{
+  height: 30px;
+  width: 100px;
+  margin:0px  10px ;
 }
