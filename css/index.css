@@ -44,7 +44,7 @@ body {
   z-index: 1;
 }
 
-#navbar a{
+.scroll{
   display: inline-block;
   text-decoration: none;
   text-align: center;
@@ -167,18 +167,11 @@ body {
   }
 }
 
-nav a:hover{
-  animation-name: focus-hover;
-  animation-duration: 200ms;
-  animation-fill-mode: forwards;
+.active{
+  background-color: hsl(250, 50%, 50%);
+  color:  hsl(10, 50%, 90%);
 }
 
-@keyframes focus-hover{
-  100%{
-    background-color: hsl(250, 50%, 50%);
-    color:  hsl(10, 50%, 90%);
-  }
-}
 
 @media (max-width:500px){
   #navbar a{
